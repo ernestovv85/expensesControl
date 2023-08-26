@@ -1,0 +1,5 @@
+package Enums;
+
+public enum CategoryExpense {
+  ALIMENTOS, SERVICIOS, RENTA, CREDITOS, ENTRETENIMIENTO, SALUD, EDUCACION, ROPA, CALZADO;
+}
