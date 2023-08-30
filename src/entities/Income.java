@@ -1,22 +1,22 @@
-package Entities;
+package entities;
 
-import Enums.CategoryIncome;
+import enums.CategoryIncome;
 
-public class Income {
+public class Income extends Date{
   private int id;
-  private String name, date;
+  private String name;
   private double amount;
-  private CategoryIncome categoryIncome;
+  private CategoryIncome category;
 
   public Income() {
   }
 
-  public Income(int id, String name, String date, double amount, CategoryIncome categoryIncome) {
+  public Income(int id, String name, int day, String month, int year, double amount, CategoryIncome category) {
+    super(day, year, month);
     this.id = id;
     this.name = name;
-    this.date = date;
     this.amount = amount;
-    this.categoryIncome = categoryIncome;
+    this.category = category;
   }
 
   public int getId() {
@@ -31,14 +31,6 @@ public class Income {
     this.name = name;
   }
 
-  public String getDate() {
-    return date;
-  }
-
-  public void setDate(String date) {
-    this.date = date;
-  }
-
   public double getAmount() {
     return amount;
   }
@@ -47,11 +39,11 @@ public class Income {
     this.amount = amount;
   }
 
-  public CategoryIncome getCategoryIncome() {
-    return categoryIncome;
+  public CategoryIncome getCategory() {
+    return category;
   }
 
-  public void setCategoryIncome(CategoryIncome categoryIncome) {
-    this.categoryIncome = categoryIncome;
+  public void setCategory(CategoryIncome category) {
+    this.category = category;
   }
 }

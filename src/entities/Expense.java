@@ -1,22 +1,22 @@
-package Entities;
+package entities;
 
-import Enums.CategoryExpense;
+import enums.CategoryExpense;
 
-public class Expense {
+public class Expense extends Date{
   private int id;
-  private String name, date;
+  private String name;
   private double amount;
-  private CategoryExpense categoryExpense;
+  private CategoryExpense category;
 
   public Expense() {
   }
 
-  public Expense(int id, String name, String date, double amount, CategoryExpense categoryExpense) {
+  public Expense(int id, String name, int day, String month, int year, double amount, CategoryExpense categoryExpense) {
+    super(day, year, month);
     this.id = id;
     this.name = name;
-    this.date = date;
     this.amount = amount;
-    this.categoryExpense = categoryExpense;
+    this.category = categoryExpense;
   }
 
   public int getId() {
@@ -31,14 +31,6 @@ public class Expense {
     this.name = name;
   }
 
-  public String getDate() {
-    return date;
-  }
-
-  public void setDate(String date) {
-    this.date = date;
-  }
-
   public double getAmount() {
     return amount;
   }
@@ -47,11 +39,11 @@ public class Expense {
     this.amount = amount;
   }
 
-  public CategoryExpense getCategoryExpense() {
-    return categoryExpense;
+  public CategoryExpense getCategory() {
+    return category;
   }
 
-  public void setCategoryExpense(CategoryExpense categoryExpense) {
-    this.categoryExpense = categoryExpense;
+  public void setCategory(CategoryExpense category) {
+    this.category = category;
   }
 }
