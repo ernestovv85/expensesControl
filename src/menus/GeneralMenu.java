@@ -1,10 +1,10 @@
-package Menus;
+package menus;
 
 import java.util.Scanner;
 
-import static Menus.ExpenseMenu.expenseMenu;
-import static Menus.GeneralReportMenu.generalReportMenu;
-import static Menus.IncomeMenu.incomeMenu;
+import static menus.ExpenseMenu.expenseMenu;
+import static menus.GeneralReportMenu.generalReportMenu;
+import static menus.IncomeMenu.incomeMenu;
 
 public class GeneralMenu {
   private static final Scanner in = new Scanner(System.in);

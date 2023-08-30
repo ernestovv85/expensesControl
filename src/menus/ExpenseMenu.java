@@ -1,9 +1,10 @@
-package Menus;
+package menus;
 
 import java.util.Scanner;
 
-import static Menus.AlternativeMenu.alternativeMenuExpense;
-import static Menus.GeneralMenu.generalMenu;
+import static controllers.ExpenseCreateController.expenseRegister;
+import static menus.AlternativeMenu.alternativeMenuExpense;
+import static menus.GeneralMenu.generalMenu;
 
 public class ExpenseMenu {
   private static final Scanner in = new Scanner(System.in);
@@ -15,6 +16,7 @@ public class ExpenseMenu {
     switch(options) {
       case 1:
         System.out.println("Agregar gasto");
+        expenseRegister();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuExpense();
         break;
