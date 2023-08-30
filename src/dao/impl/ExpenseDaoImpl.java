@@ -28,13 +28,14 @@ public class ExpenseDaoImpl implements ExpenseDao {
       newExpense.setAmount(expenseDto.getAmount());
 
       PreparedStatement preparedStatement = connection.prepareStatement(
-              "INSERT INTO income(name, expenseDay, expenseMonth, expenseYear, category, amount) VALUES(?, ?, ?, ?, ?, ?)");
+              "INSERT INTO expense(name, expenseDay, expenseMonth, expenseYear, category, amount) VALUES(?, ?, ?, ?, ?, ?)");
       preparedStatement.setString(1, newExpense.getName());
       preparedStatement.setInt(2, newExpense.getDay());
       preparedStatement.setString(3, newExpense.getMonth());
       preparedStatement.setInt(4, newExpense.getYear());
       preparedStatement.setString(5, newExpense.getCategory().toString());
       preparedStatement.setDouble(6, newExpense.getAmount());
+      preparedStatement.executeUpdate();
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
