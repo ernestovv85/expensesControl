@@ -3,6 +3,7 @@ package menus;
 import java.util.Scanner;
 
 import static controllers.IncomeCreateController.incomeRegister;
+import static controllers.IncomeGetController.incomeGetAll;
 import static menus.AlternativeMenu.alternativeMenuIncome;
 import static menus.GeneralMenu.generalMenu;
 
@@ -22,6 +23,7 @@ public class IncomeMenu {
         break;
       case 2:
         System.out.println("Historial de ingresos");
+        incomeGetAll();
         System.out.println("Operación realizada con éxito");
         alternativeMenuIncome();
         break;
