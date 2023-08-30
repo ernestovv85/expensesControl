@@ -1,9 +1,10 @@
-package Menus;
+package menus;
 
 import java.util.Scanner;
 
-import static Menus.AlternativeMenu.alternativeMenuIncome;
-import static Menus.GeneralMenu.generalMenu;
+import static controllers.IncomeCreateController.incomeRegister;
+import static menus.AlternativeMenu.alternativeMenuIncome;
+import static menus.GeneralMenu.generalMenu;
 
 public class IncomeMenu {
   private static final Scanner in = new Scanner(System.in);
@@ -15,6 +16,7 @@ public class IncomeMenu {
     switch(options) {
       case 1:
         System.out.println("Agregar ingreso");
+        incomeRegister();
         System.out.println("Operación realizada con éxito");
         alternativeMenuIncome();
         break;

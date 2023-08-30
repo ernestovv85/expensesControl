@@ -1,9 +1,9 @@
-package Menus;
+package menus;
 
 import java.util.Scanner;
 
-import static Menus.AlternativeMenu.alternativeMenuGeneralReport;
-import static Menus.GeneralMenu.generalMenu;
+import static menus.AlternativeMenu.alternativeMenuGeneralReport;
+import static menus.GeneralMenu.generalMenu;
 
 public class GeneralReportMenu {
   private static final Scanner in = new Scanner(System.in);

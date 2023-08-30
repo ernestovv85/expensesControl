@@ -1,4 +1,4 @@
-import static Menus.GeneralMenu.generalMenu;
+import static menus.GeneralMenu.generalMenu;
 
 public class Main {
   public static void main(String[] args) {
