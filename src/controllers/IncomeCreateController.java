@@ -18,6 +18,7 @@ public class IncomeCreateController {
     incomeDto.setName(in.nextLine());
     System.out.println("Ingrese el número de día del mes en que se recibió:");
     incomeDto.setDay(in.nextInt());
+    in.nextLine();
     System.out.println("Ingrese el nombre del mes en que se recibió:");
     incomeDto.setMonth(in.nextLine());
     System.out.println("Ingrese el año en que se recibió, a cuatro dígitos:");
