@@ -12,12 +12,12 @@ public class ExpenseDto extends Date {
   public ExpenseDto() {
   }
 
-  public ExpenseDto(int id, String name, int day, String month, int year, double amount, CategoryExpense categoryExpense) {
+  public ExpenseDto(int id, String name, int day, String month, int year, double amount, CategoryExpense category) {
     super(day, year, month);
     this.id = id;
     this.name = name;
     this.amount = amount;
-    this.category = categoryExpense;
+    this.category = category;
   }
 
   public int getId() {

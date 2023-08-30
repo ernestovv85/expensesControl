@@ -4,10 +4,14 @@ import configuration.JDBC;
 import dao.ExpenseDao;
 import dao.dto.ExpenseDto;
 import entities.Expense;
+import enums.CategoryExpense;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExpenseDaoImpl implements ExpenseDao {
   private final Connection connection;
@@ -39,5 +43,28 @@ public class ExpenseDaoImpl implements ExpenseDao {
     } catch (SQLException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  @Override
+  public List<ExpenseDto> getAll() {
+    List<ExpenseDto> expenses = new ArrayList<>();
+    try {
+      PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM expense");
+      ResultSet resultSet = preparedStatement.executeQuery();
+      while (resultSet.next()){
+        int id = resultSet.getInt("id");
+        String name = resultSet.getString("name");
+        int day = resultSet.getInt("expenseDay");
+        String month = resultSet.getString("expenseMonth");
+        int year = resultSet.getInt("expenseYear");
+        CategoryExpense category = CategoryExpense.valueOf(resultSet.getString("category"));
+        double amount = resultSet.getDouble("amount");
+        ExpenseDto newExpenseDto = new ExpenseDto(id, name, day, month, year, amount, category);
+        expenses.add(newExpenseDto);
+      }
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+    return expenses;
   }
 }
