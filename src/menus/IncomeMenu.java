@@ -33,25 +33,29 @@ public class IncomeMenu {
       case 2:
         System.out.println("Historial de ingresos");
         incomeGetAll();
-        System.out.println("Operación realizada con éxito");
+        System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuIncome();
         break;
       case 3:
         System.out.println("Ingresos por mes");
-        System.out.println("Operación realizada con éxito");
+        System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuIncome();
         break;
       case 4:
         System.out.println("Ingresos por año");
-        System.out.println("Operación realizada con éxito");
+        System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuIncome();
         break;
       case 5:
         System.out.println("Modificar ingreso");
         incomeUpdate();
-        System.out.println("Operación realizada con éxito");
+        System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuIncome();
         break;
+      case 6:
+        System.out.println("Eliminar ingreso");
+        System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
+        alternativeMenuIncome();
       case 7:
         generalMenu();
         break;
