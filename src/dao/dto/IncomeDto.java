@@ -24,6 +24,10 @@ public class IncomeDto extends Date{
     return id;
   }
 
+  public void setId(int id) {
+    this.id = id;
+  }
+
   public String getName() {
     return name;
   }
@@ -47,4 +51,5 @@ public class IncomeDto extends Date{
   public void setCategory(CategoryIncome category) {
     this.category = category;
   }
+
 }
