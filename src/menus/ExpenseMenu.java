@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import static controllers.ExpenseCreateController.expenseRegister;
 import static controllers.ExpenseGetController.expenseGetAll;
+import static controllers.ExpenseUpdateController.expenseUpdate;
 import static menus.AlternativeMenu.alternativeMenuExpense;
 import static menus.GeneralMenu.generalMenu;
 
@@ -12,7 +13,15 @@ public class ExpenseMenu {
 
   public static void expenseMenu() {
     System.out.println("Elija la opción deseada:");
-    System.out.println("1. Agregar gasto\n" + "2. Historial de gastos\n" + "3. Gastos por mes\n" + "4. Gastos por año\n" + "5. Menú anterior\n" + "6. Salir");
+    System.out.println(
+            "1. Agregar gasto\n" +
+            "2. Historial de gastos\n" +
+            "3. Gastos por mes\n" +
+            "4. Gastos por año\n" +
+            "5. Modificar gasto\n" +
+            "6. Eliminar gasto\n" +
+            "7. Menú anterior\n" +
+            "8. Salir");
     int options = in.nextInt();
     switch(options) {
       case 1:
@@ -38,9 +47,20 @@ public class ExpenseMenu {
         alternativeMenuExpense();
         break;
       case 5:
-        generalMenu();
+        System.out.println("Modificación de gastos");
+        expenseUpdate();
+        System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
+        alternativeMenuExpense();
         break;
       case 6:
+        System.out.println("Eliminación de gastos");
+        System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
+        alternativeMenuExpense();
+        break;
+      case 7:
+        generalMenu();
+        break;
+      case 8:
         System.out.println("Gracias por usar la aplicación. ¡Vuelva pronto!");
         break;
       default:
