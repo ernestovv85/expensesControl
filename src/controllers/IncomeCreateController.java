@@ -24,14 +24,12 @@ public class IncomeCreateController {
     System.out.println("Ingrese el año en que se recibió, a cuatro dígitos:");
     incomeDto.setYear(in.nextInt());
     System.out.println("Elija el tipo de ingreso, de la siguiente lista:");
-    System.out.println("1. Sueldo\n" + "2. Crédito\n" + "3. Extra");
+    System.out.println("1. Sueldo\n" + "2. Extra");
     int options = in.nextInt();
     switch(options) {
       case 1: incomeDto.setCategory(CategoryIncome.SUELDO);
       break;
-      case 2: incomeDto.setCategory(CategoryIncome.CREDITO);
-      break;
-      case 3: incomeDto.setCategory(CategoryIncome.EXTRA);
+      case 2: incomeDto.setCategory(CategoryIncome.EXTRA);
       break;
       default:
         System.out.println("No se encontró la opción seleccionada.");

@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import static controllers.IncomeCreateController.incomeRegister;
 import static controllers.IncomeGetController.incomeGetAll;
+import static controllers.IncomeUpdateController.incomeUpdate;
 import static menus.AlternativeMenu.alternativeMenuIncome;
 import static menus.GeneralMenu.generalMenu;
 
@@ -12,7 +13,15 @@ public class IncomeMenu {
 
   public static void incomeMenu() {
     System.out.println("Elija la opción deseada:");
-    System.out.println("1. Agregar ingreso\n" + "2. Historial de ingresos\n" + "3. Ingresos por mes\n" + "4. Ingresos por año\n" + "5. Menú anterior\n" + "6. Salir");
+    System.out.println(
+            "1. Agregar ingreso\n" +
+            "2. Historial de ingresos\n" +
+            "3. Ingresos por mes\n" +
+            "4. Ingresos por año\n" +
+            "5. Modificar ingreso\n" +
+            "6. Eliminar ingreso\n" +
+            "7. Menú anterior\n" +
+            "8. Salir");
     int options = in.nextInt();
     switch(options) {
       case 1:
@@ -38,9 +47,15 @@ public class IncomeMenu {
         alternativeMenuIncome();
         break;
       case 5:
+        System.out.println("Modificar ingreso");
+        incomeUpdate();
+        System.out.println("Operación realizada con éxito");
+        alternativeMenuIncome();
+        break;
+      case 7:
         generalMenu();
         break;
-      case 6:
+      case 8:
         System.out.println("Gracias por usar la aplicación. ¡Vuelva pronto!");
         break;
       default:

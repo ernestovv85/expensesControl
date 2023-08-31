@@ -67,4 +67,23 @@ public class IncomeDaoImpl implements IncomeDao {
     }
     return incomes;
   }
+
+  @Override
+  public void update(IncomeDto incomeDto) {
+    try {
+      PreparedStatement preparedStatement = connection.prepareStatement(
+              "UPDATE income SET name=?, incomeDay=?, incomeMonth=?, incomeYear=?, category=?, amount=? WHERE id=?");
+      preparedStatement.setString(1, incomeDto.getName());
+      preparedStatement.setInt(2, incomeDto.getDay());
+      preparedStatement.setString(3, incomeDto.getMonth());
+      preparedStatement.setInt(4, incomeDto.getYear());
+      preparedStatement.setString(5, incomeDto.getCategory().name());
+      preparedStatement.setDouble(6, incomeDto.getAmount());
+      preparedStatement.setInt(7, incomeDto.getId());
+      preparedStatement.executeUpdate();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+
+  }
 }
