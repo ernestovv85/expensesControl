@@ -7,66 +7,68 @@ import enums.CategoryExpense;
 
 import java.util.Scanner;
 
-public class ExpenseCreateController {
+public class ExpenseUpdateController {
   private static final Scanner in = new Scanner(System.in);
-
-  public static void expenseRegister() {
+  public static void expenseUpdate() {
     ExpenseDao expenseDao = new ExpenseDaoImpl();
-    System.out.println("Ingrese la información solicitada para registrar el ingreso.");
 
     ExpenseDto expenseDto = new ExpenseDto();
-    System.out.println("Ingrese el nombre del gasto:");
+    System.out.println("Indique el id del registro que desea modificar:");
+    expenseDto.setId(in.nextInt());
+    in.nextLine();
+    System.out.println("Ingrese la información solicitada:");
+    System.out.println("Ingrese el nuevo nombre:");
     expenseDto.setName(in.nextLine());
-    System.out.println("Ingrese el número de día del mes que se gastó:");
+    System.out.println("Ingreses el nuevo día:");
     expenseDto.setDay(in.nextInt());
     in.nextLine();
-    System.out.println("Ingrese el nombre del mes que se gastó:");
+    System.out.println("Ingrese el nuevo mes:");
     expenseDto.setMonth(in.nextLine());
-    System.out.println("Ingrese el año en que se gastó, a cuatro dígitos:");
+    System.out.println("Ingrese el nuevo año:");
     expenseDto.setYear(in.nextInt());
     System.out.println("Elija el tipo de gasto, de la siguiente lista:");
     System.out.println("1. Alimentos\n"
-                    + "2. Artículos para el hogar\n"
-                    + "3. Servicios\n"
-                    + "4. Transporte\n"
-                    + "5. Renta\n"
-                    + "6. Créditos\n"
-                    + "7. Entretenimiento\n"
-                    + "8. Salud\n"
-                    + "9. Educación\n"
-                    + "10. Ropa\n"
-                    + "11. Calzado");
+            + "2. Artículos para el hogar\n"
+            + "3. Servicios\n"
+            + "4. Transporte\n"
+            + "5. Renta\n"
+            + "6. Créditos\n"
+            + "7. Entretenimiento\n"
+            + "8. Salud\n"
+            + "9. Educación\n"
+            + "10. Ropa\n"
+            + "11. Calzado");
     int options = in.nextInt();
     switch(options) {
       case 1: expenseDto.setCategory(CategoryExpense.ALIMENTOS);
-      break;
+        break;
       case 2: expenseDto.setCategory(CategoryExpense.HOGAR);
-      break;
+        break;
       case 3: expenseDto.setCategory(CategoryExpense.SERVICIOS);
-      break;
+        break;
       case 4: expenseDto.setCategory(CategoryExpense.TRANSPORTE);
-      break;
+        break;
       case 5: expenseDto.setCategory(CategoryExpense.RENTA);
-      break;
+        break;
       case 6: expenseDto.setCategory(CategoryExpense.CREDITOS);
-      break;
+        break;
       case 7: expenseDto.setCategory(CategoryExpense.ENTRETENIMIENTO);
-      break;
+        break;
       case 8: expenseDto.setCategory(CategoryExpense.SALUD);
-      break;
+        break;
       case 9: expenseDto.setCategory(CategoryExpense.EDUCACION);
-      break;
+        break;
       case 10: expenseDto.setCategory(CategoryExpense.ROPA);
-      break;
+        break;
       case 11: expenseDto.setCategory(CategoryExpense.CALZADO);
-      break;
+        break;
       default:
         System.out.println("No se encontró la opción digitada. Comience de nuevo.");
-        expenseRegister();
+        expenseUpdate();
     }
-    System.out.println("Ingrese la cantidad:");
+    System.out.println("Ingrese la nueva cantidad:");
     expenseDto.setAmount(in.nextDouble());
 
-    expenseDao.create(expenseDto);
+    expenseDao.update(expenseDto);
   }
 }

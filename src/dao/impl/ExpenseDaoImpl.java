@@ -67,4 +67,23 @@ public class ExpenseDaoImpl implements ExpenseDao {
     }
     return expenses;
   }
+
+  @Override
+  public void update(ExpenseDto expenseDto) {
+    try {
+      PreparedStatement preparedStatement = connection.prepareStatement(
+              "UPDATE expense SET name=?, expenseDay=?, expenseMonth=?, expenseYear=?, category=?, amount=? WHERE id=?"
+      );
+      preparedStatement.setString(1, expenseDto.getName());
+      preparedStatement.setInt(2, expenseDto.getDay());
+      preparedStatement.setString(3, expenseDto.getMonth());
+      preparedStatement.setInt(4, expenseDto.getYear());
+      preparedStatement.setString(5, expenseDto.getCategory().toString());
+      preparedStatement.setDouble(6, expenseDto.getAmount());
+      preparedStatement.setInt(7, expenseDto.getId());
+      preparedStatement.executeUpdate();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+  }
 }

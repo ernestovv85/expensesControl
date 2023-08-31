@@ -8,4 +8,6 @@ public interface ExpenseDao {
   void create(ExpenseDto expenseDto);
 
   List<ExpenseDto> getAll();
+
+  void update(ExpenseDto expenseDto);
 }
