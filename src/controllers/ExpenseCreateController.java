@@ -16,12 +16,12 @@ public class ExpenseCreateController {
 
     ExpenseDto expenseDto = new ExpenseDto();
     System.out.println("Ingrese el nombre del gasto:");
-    expenseDto.setName(in.nextLine());
+    expenseDto.setName(in.nextLine().toUpperCase());
     System.out.println("Ingrese el número de día del mes que se gastó:");
     expenseDto.setDay(in.nextInt());
     in.nextLine();
     System.out.println("Ingrese el nombre del mes que se gastó:");
-    expenseDto.setMonth(in.nextLine());
+    expenseDto.setMonth(in.nextLine().toLowerCase());
     System.out.println("Ingrese el año en que se gastó, a cuatro dígitos:");
     expenseDto.setYear(in.nextInt());
     System.out.println("Elija el tipo de gasto, de la siguiente lista:");
