@@ -15,12 +15,12 @@ public class IncomeCreateController {
 
     IncomeDto incomeDto= new IncomeDto();
     System.out.println("Ingrese el nombre del ingreso:");
-    incomeDto.setName(in.nextLine());
+    incomeDto.setName(in.nextLine().toUpperCase());
     System.out.println("Ingrese el número de día del mes en que se recibió:");
     incomeDto.setDay(in.nextInt());
     in.nextLine();
     System.out.println("Ingrese el nombre del mes en que se recibió:");
-    incomeDto.setMonth(in.nextLine());
+    incomeDto.setMonth(in.nextLine().toLowerCase());
     System.out.println("Ingrese el año en que se recibió, a cuatro dígitos:");
     incomeDto.setYear(in.nextInt());
     System.out.println("Elija el tipo de ingreso, de la siguiente lista:");
