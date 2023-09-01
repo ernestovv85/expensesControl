@@ -69,6 +69,59 @@ public class ExpenseDaoImpl implements ExpenseDao {
   }
 
   @Override
+  public List<ExpenseDto> getByMonth(String expenseMonth, int expenseYear) {
+    List<ExpenseDto> expenses = new ArrayList<>();
+    try {
+      PreparedStatement preparedStatement = connection.prepareStatement(
+              "SELECT * FROM expense WHERE expenseMonth=? AND expenseYear=?"
+      );
+      preparedStatement.setString(1, expenseMonth);
+      preparedStatement.setInt(2, expenseYear);
+      ResultSet resultSet = preparedStatement.executeQuery();
+      while (resultSet.next()){
+        int id = resultSet.getInt("id");
+        String name = resultSet.getString("name");
+        int day = resultSet.getInt("expenseDay");
+        String month = resultSet.getString("expenseMonth");
+        int year = resultSet.getInt("expenseYear");
+        CategoryExpense category = CategoryExpense.valueOf(resultSet.getString("category"));
+        double amount = resultSet.getDouble("amount");
+        ExpenseDto newExpenseDto = new ExpenseDto(id, name, day, month, year, amount, category);
+        expenses.add(newExpenseDto);
+      }
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+    return expenses;
+  }
+
+  @Override
+  public List<ExpenseDto> getByYear(int expenseYear) {
+    List<ExpenseDto> expenses = new ArrayList<>();
+    try {
+      PreparedStatement preparedStatement = connection.prepareStatement(
+              "SELECT * FROM expense WHERE expenseYear=?"
+      );
+      preparedStatement.setInt(1, expenseYear);
+      ResultSet resultSet = preparedStatement.executeQuery();
+      while (resultSet.next()){
+        int id = resultSet.getInt("id");
+        String name = resultSet.getString("name");
+        int day = resultSet.getInt("expenseDay");
+        String month = resultSet.getString("expenseMonth");
+        int year = resultSet.getInt("expenseYear");
+        CategoryExpense category = CategoryExpense.valueOf(resultSet.getString("category"));
+        double amount = resultSet.getDouble("amount");
+        ExpenseDto newExpenseDto = new ExpenseDto(id, name, day, month, year, amount, category);
+        expenses.add(newExpenseDto);
+      }
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+    return expenses;
+  }
+
+  @Override
   public void update(ExpenseDto expenseDto) {
     try {
       PreparedStatement preparedStatement = connection.prepareStatement(

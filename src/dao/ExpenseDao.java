@@ -8,6 +8,8 @@ public interface ExpenseDao {
   void create(ExpenseDto expenseDto);
 
   List<ExpenseDto> getAll();
+  List<ExpenseDto> getByMonth(String expenseMonth, int expenseYear);
+  List<ExpenseDto> getByYear(int expenseYear);
 
   void update(ExpenseDto expenseDto);
 

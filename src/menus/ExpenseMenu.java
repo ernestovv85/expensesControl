@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import static controllers.expenseControllers.ExpenseCreateController.expenseRegister;
 import static controllers.expenseControllers.ExpenseDeleteController.deleteExpense;
-import static controllers.expenseControllers.ExpenseGetController.getAllExpenses;
+import static controllers.expenseControllers.ExpenseGetController.*;
 import static controllers.expenseControllers.ExpenseUpdateController.updateExpense;
 import static menus.AlternativeMenu.alternativeMenuExpense;
 import static menus.GeneralMenu.generalMenu;
@@ -39,11 +39,13 @@ public class ExpenseMenu {
         break;
       case 3:
         System.out.println("Gastos por mes");
+        getExpenseByMonth();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuExpense();
         break;
       case 4:
         System.out.println("Gastos por año");
+        getExpenseByYear();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuExpense();
         break;
