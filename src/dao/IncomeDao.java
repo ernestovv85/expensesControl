@@ -8,6 +8,7 @@ public interface IncomeDao {
   void create (IncomeDto incomeDto);
 
   List<IncomeDto> getAll();
+  List<IncomeDto> getByMonth(String incomeMonth, int incomeYear);
 
   void update(IncomeDto incomeDto);
 

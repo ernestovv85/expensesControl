@@ -5,6 +5,7 @@ import java.util.Scanner;
 import static controllers.incomeControllers.IncomeCreateController.incomeRegister;
 import static controllers.incomeControllers.IncomeDeleteController.incomeDelete;
 import static controllers.incomeControllers.IncomeGetController.incomeGetAll;
+import static controllers.incomeControllers.IncomeGetController.incomeGetByMonth;
 import static controllers.incomeControllers.IncomeUpdateController.incomeUpdate;
 import static menus.AlternativeMenu.alternativeMenuIncome;
 import static menus.GeneralMenu.generalMenu;
@@ -39,6 +40,7 @@ public class IncomeMenu {
         break;
       case 3:
         System.out.println("Ingresos por mes");
+        incomeGetByMonth();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuIncome();
         break;
