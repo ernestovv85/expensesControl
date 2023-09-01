@@ -6,7 +6,7 @@ import dao.impl.ExpenseDaoImpl;
 import java.util.Scanner;
 
 public class ExpenseDeleteController {
-  public static void expenseDelete() {
+  public static void deleteExpense() {
     Scanner in = new Scanner(System.in);
     ExpenseDao expenseDao = new ExpenseDaoImpl();
     System.out.println(

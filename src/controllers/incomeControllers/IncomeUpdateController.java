@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class IncomeUpdateController {
   private static final Scanner in = new Scanner(System.in);
-  public static void incomeUpdate() {
+  public static void updateIncome() {
     IncomeDao incomeDao = new IncomeDaoImpl();
 
     IncomeDto incomeDto = new IncomeDto();
@@ -38,7 +38,7 @@ public class IncomeUpdateController {
           break;
           default:
             System.out.println("No se encontró la opción seleccionada. Intente de nuevo:");
-            incomeUpdate();
+            updateIncome();
         }
     System.out.println("Ingrese la nueva cantidad:");
     incomeDto.setAmount(in.nextInt());

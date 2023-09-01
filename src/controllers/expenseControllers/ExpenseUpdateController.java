@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class ExpenseUpdateController {
   private static final Scanner in = new Scanner(System.in);
-  public static void expenseUpdate() {
+  public static void updateExpense() {
     ExpenseDao expenseDao = new ExpenseDaoImpl();
 
     ExpenseDto expenseDto = new ExpenseDto();
@@ -64,7 +64,7 @@ public class ExpenseUpdateController {
         break;
       default:
         System.out.println("No se encontró la opción digitada. Comience de nuevo.");
-        expenseUpdate();
+        updateExpense();
     }
     System.out.println("Ingrese la nueva cantidad:");
     expenseDto.setAmount(in.nextDouble());

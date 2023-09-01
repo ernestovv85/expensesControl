@@ -6,7 +6,7 @@ import dao.impl.IncomeDaoImpl;
 import java.util.Scanner;
 
 public class IncomeDeleteController {
-  public static void incomeDelete() {
+  public static void deleteIncome() {
     Scanner in = new Scanner(System.in);
     IncomeDao incomeDao = new IncomeDaoImpl();
     System.out.println(

@@ -7,7 +7,7 @@ import dao.impl.ExpenseDaoImpl;
 import java.util.List;
 
 public class ExpenseGetController {
-  public static void expenseGetAll() {
+  public static void getAllExpenses() {
     ExpenseDao expenseDao = new ExpenseDaoImpl();
 
     List<ExpenseDto> expenses = expenseDao.getAll();

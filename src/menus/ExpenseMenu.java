@@ -3,9 +3,9 @@ package menus;
 import java.util.Scanner;
 
 import static controllers.expenseControllers.ExpenseCreateController.expenseRegister;
-import static controllers.expenseControllers.ExpenseDeleteController.expenseDelete;
-import static controllers.expenseControllers.ExpenseGetController.expenseGetAll;
-import static controllers.expenseControllers.ExpenseUpdateController.expenseUpdate;
+import static controllers.expenseControllers.ExpenseDeleteController.deleteExpense;
+import static controllers.expenseControllers.ExpenseGetController.getAllExpenses;
+import static controllers.expenseControllers.ExpenseUpdateController.updateExpense;
 import static menus.AlternativeMenu.alternativeMenuExpense;
 import static menus.GeneralMenu.generalMenu;
 
@@ -33,7 +33,7 @@ public class ExpenseMenu {
         break;
       case 2:
         System.out.println("Historial de gastos");
-        expenseGetAll();
+        getAllExpenses();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuExpense();
         break;
@@ -49,13 +49,13 @@ public class ExpenseMenu {
         break;
       case 5:
         System.out.println("Modificación de gastos");
-        expenseUpdate();
+        updateExpense();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuExpense();
         break;
       case 6:
         System.out.println("Eliminación de gastos");
-        expenseDelete();
+        deleteExpense();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuExpense();
         break;
