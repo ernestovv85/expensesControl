@@ -3,6 +3,7 @@ package menus;
 import java.util.Scanner;
 
 import static controllers.ExpenseCreateController.expenseRegister;
+import static controllers.ExpenseDeleteController.expenseDelete;
 import static controllers.ExpenseGetController.expenseGetAll;
 import static controllers.ExpenseUpdateController.expenseUpdate;
 import static menus.AlternativeMenu.alternativeMenuExpense;
@@ -54,6 +55,7 @@ public class ExpenseMenu {
         break;
       case 6:
         System.out.println("Eliminación de gastos");
+        expenseDelete();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuExpense();
         break;

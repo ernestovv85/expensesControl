@@ -10,4 +10,6 @@ public interface ExpenseDao {
   List<ExpenseDto> getAll();
 
   void update(ExpenseDto expenseDto);
+
+  void delete(int expenseId);
 }

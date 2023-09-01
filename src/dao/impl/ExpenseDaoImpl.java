@@ -86,4 +86,17 @@ public class ExpenseDaoImpl implements ExpenseDao {
       throw new RuntimeException(e);
     }
   }
+
+  @Override
+  public void delete(int expenseId) {
+    try {
+      PreparedStatement preparedStatement = connection.prepareStatement(
+              "DELETE FROM expense WHERE id=?"
+      );
+      preparedStatement.setInt(1, expenseId);
+      preparedStatement.executeUpdate();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+  }
 }
