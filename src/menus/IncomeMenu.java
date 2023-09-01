@@ -3,6 +3,7 @@ package menus;
 import java.util.Scanner;
 
 import static controllers.IncomeCreateController.incomeRegister;
+import static controllers.IncomeDeleteController.incomeDelete;
 import static controllers.IncomeGetController.incomeGetAll;
 import static controllers.IncomeUpdateController.incomeUpdate;
 import static menus.AlternativeMenu.alternativeMenuIncome;
@@ -54,8 +55,10 @@ public class IncomeMenu {
         break;
       case 6:
         System.out.println("Eliminar ingreso");
+        incomeDelete();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuIncome();
+        break;
       case 7:
         generalMenu();
         break;

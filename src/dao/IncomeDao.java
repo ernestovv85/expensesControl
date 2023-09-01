@@ -10,4 +10,6 @@ public interface IncomeDao {
   List<IncomeDto> getAll();
 
   void update(IncomeDto incomeDto);
+
+  void delete(int incomeId);
 }

@@ -86,4 +86,17 @@ public class IncomeDaoImpl implements IncomeDao {
     }
 
   }
+
+  @Override
+  public void delete(int incomeId) {
+    try {
+      PreparedStatement preparedStatement = connection.prepareStatement(
+              "DELETE FROM income WHERE id=?"
+      );
+      preparedStatement.setInt(1, incomeId);
+      preparedStatement.executeUpdate();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+  }
 }
