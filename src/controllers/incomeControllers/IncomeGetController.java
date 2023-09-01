@@ -38,4 +38,20 @@ public class IncomeGetController {
               + income.getAmount());
     }
   }
+
+  public static void getIncomeByYear() {
+    IncomeDao incomeDao = new IncomeDaoImpl();
+    Scanner in = new Scanner(System.in);
+    System.out.println("Digite el año que desea consultar:");
+    List<IncomeDto> incomeByYear = incomeDao.getByYear(in.nextInt());
+    for (IncomeDto income: incomeByYear) {
+      System.out.println(income.getId() + "\t"
+              + income.getName() + "\t"
+              + income.getDay() + "/"
+              + income.getMonth() + "/"
+              + income.getYear() + "\t"
+              + income.getCategory() + "\t" + "$" +
+              + income.getAmount());
+    }
+  }
 }

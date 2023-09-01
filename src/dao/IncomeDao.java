@@ -9,6 +9,7 @@ public interface IncomeDao {
 
   List<IncomeDto> getAll();
   List<IncomeDto> getByMonth(String incomeMonth, int incomeYear);
+  List<IncomeDto> getByYear(int incomeYear);
 
   void update(IncomeDto incomeDto);
 

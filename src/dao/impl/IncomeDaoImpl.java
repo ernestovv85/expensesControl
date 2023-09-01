@@ -96,6 +96,32 @@ public class IncomeDaoImpl implements IncomeDao {
   }
 
   @Override
+  public List<IncomeDto> getByYear(int incomeYear) {
+    List<IncomeDto> incomes = new ArrayList<>();
+    try {
+      PreparedStatement preparedStatement = connection.prepareStatement(
+              "SELECT * FROM income WHERE incomeYear=?"
+      );
+      preparedStatement.setInt(1, incomeYear);
+      ResultSet resultSet = preparedStatement.executeQuery();
+      while (resultSet.next()) {
+        int id = resultSet.getInt("id");
+        String name = resultSet.getString("name");
+        int day = resultSet.getInt("incomeDay");
+        String month = resultSet.getString("incomeMonth");
+        int year = resultSet.getInt("incomeYear");
+        CategoryIncome category = CategoryIncome.valueOf(resultSet.getString("category"));
+        double amount = resultSet.getDouble("amount");
+        IncomeDto newIncomeDto = new IncomeDto(id, name, day, month, year, amount, category);
+        incomes.add(newIncomeDto);
+      }
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+    return incomes;
+  }
+
+  @Override
   public void update(IncomeDto incomeDto) {
     try {
       PreparedStatement preparedStatement = connection.prepareStatement(
