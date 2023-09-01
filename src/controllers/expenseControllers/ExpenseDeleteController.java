@@ -1,4 +1,4 @@
-package controllers;
+package controllers.expenseControllers;
 
 import dao.ExpenseDao;
 import dao.impl.ExpenseDaoImpl;

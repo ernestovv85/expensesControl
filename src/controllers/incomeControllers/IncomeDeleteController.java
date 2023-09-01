@@ -1,4 +1,4 @@
-package controllers;
+package controllers.incomeControllers;
 
 import dao.IncomeDao;
 import dao.impl.IncomeDaoImpl;

@@ -2,10 +2,10 @@ package menus;
 
 import java.util.Scanner;
 
-import static controllers.IncomeCreateController.incomeRegister;
-import static controllers.IncomeDeleteController.incomeDelete;
-import static controllers.IncomeGetController.incomeGetAll;
-import static controllers.IncomeUpdateController.incomeUpdate;
+import static controllers.incomeControllers.IncomeCreateController.incomeRegister;
+import static controllers.incomeControllers.IncomeDeleteController.incomeDelete;
+import static controllers.incomeControllers.IncomeGetController.incomeGetAll;
+import static controllers.incomeControllers.IncomeUpdateController.incomeUpdate;
 import static menus.AlternativeMenu.alternativeMenuIncome;
 import static menus.GeneralMenu.generalMenu;
 

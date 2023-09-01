@@ -2,10 +2,10 @@ package menus;
 
 import java.util.Scanner;
 
-import static controllers.ExpenseCreateController.expenseRegister;
-import static controllers.ExpenseDeleteController.expenseDelete;
-import static controllers.ExpenseGetController.expenseGetAll;
-import static controllers.ExpenseUpdateController.expenseUpdate;
+import static controllers.expenseControllers.ExpenseCreateController.expenseRegister;
+import static controllers.expenseControllers.ExpenseDeleteController.expenseDelete;
+import static controllers.expenseControllers.ExpenseGetController.expenseGetAll;
+import static controllers.expenseControllers.ExpenseUpdateController.expenseUpdate;
 import static menus.AlternativeMenu.alternativeMenuExpense;
 import static menus.GeneralMenu.generalMenu;
 
