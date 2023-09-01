@@ -14,10 +14,10 @@ public class IncomeGetController {
     for (IncomeDto income: incomes) {
       System.out.println(income.getId() + "\t"
               + income.getName() + "\t"
-              + income.getDay() + "\t"
-              + income.getMonth() + "\t"
+              + income.getDay() + "/"
+              + income.getMonth() + "/"
               + income.getYear() + "\t"
-              + income.getCategory() + "\t"
+              + income.getCategory() + "\t" + "$" +
               + income.getAmount());
     }
   }
