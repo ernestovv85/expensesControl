@@ -33,13 +33,13 @@ public class IncomeMenu {
         break;
       case 2:
         System.out.println("Historial de ingresos");
-        incomeGetAll();
+        getAllIncomes();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuIncome();
         break;
       case 3:
         System.out.println("Ingresos por mes");
-        incomeGetByMonth();
+        getIncomeByMonth();
         System.out.println("Operación realizada con éxito\n" + "Elija una opción:");
         alternativeMenuIncome();
         break;

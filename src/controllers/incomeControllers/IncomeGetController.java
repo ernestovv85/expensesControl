@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class IncomeGetController {
-  public static void incomeGetAll(){
+  public static void getAllIncomes(){
     IncomeDao incomeDao = new IncomeDaoImpl();
 
     List<IncomeDto> incomes = incomeDao.getAll();
@@ -23,7 +23,7 @@ public class IncomeGetController {
     }
   }
 
-  public static void incomeGetByMonth() {
+  public static void getIncomeByMonth() {
     IncomeDao incomeDao = new IncomeDaoImpl();
     Scanner in = new Scanner(System.in);
     System.out.println("Digite el mes, dé enter y después el año que desea consultar:");
