@@ -36,6 +36,7 @@ public class IncomeCreateController {
     }
     System.out.println("Digite la cantidad:");
     incomeDto.setAmount(in.nextDouble());
+    in.nextLine();
 
     incomeDao.create(incomeDto);
   }

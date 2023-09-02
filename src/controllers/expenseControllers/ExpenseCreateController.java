@@ -66,6 +66,7 @@ public class ExpenseCreateController {
     }
     System.out.println("Digite la cantidad:");
     expenseDto.setAmount(in.nextDouble());
+    in.nextLine();
 
     expenseDao.create(expenseDto);
   }
