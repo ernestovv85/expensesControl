@@ -13,18 +13,18 @@ public class ExpenseUpdateController {
     ExpenseDao expenseDao = new ExpenseDaoImpl();
 
     ExpenseDto expenseDto = new ExpenseDto();
-    System.out.println("Indique el id del registro que desea modificar:");
+    System.out.println("Digite el id del registro que desea modificar:");
     expenseDto.setId(in.nextInt());
     in.nextLine();
-    System.out.println("Ingrese la información solicitada:");
-    System.out.println("Ingrese el nuevo nombre:");
+    System.out.println("Digite la información solicitada:");
+    System.out.println("Digite el nuevo nombre:");
     expenseDto.setName(in.nextLine());
-    System.out.println("Ingreses el nuevo día:");
+    System.out.println("Digite el nuevo día:");
     expenseDto.setDay(in.nextInt());
     in.nextLine();
-    System.out.println("Ingrese el nuevo mes:");
+    System.out.println("Digite el nuevo mes:");
     expenseDto.setMonth(in.nextLine());
-    System.out.println("Ingrese el nuevo año:");
+    System.out.println("Digite el nuevo año:");
     expenseDto.setYear(in.nextInt());
     System.out.println("Elija el tipo de gasto, de la siguiente lista:");
     System.out.println("1. Alimentos\n"
@@ -66,7 +66,7 @@ public class ExpenseUpdateController {
         System.out.println("No se encontró la opción digitada. Comience de nuevo.");
         updateExpense();
     }
-    System.out.println("Ingrese la nueva cantidad:");
+    System.out.println("Digite la nueva cantidad:");
     expenseDto.setAmount(in.nextDouble());
 
     expenseDao.update(expenseDto);

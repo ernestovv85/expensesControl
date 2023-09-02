@@ -13,18 +13,18 @@ public class IncomeUpdateController {
     IncomeDao incomeDao = new IncomeDaoImpl();
 
     IncomeDto incomeDto = new IncomeDto();
-    System.out.println("Indique el id del registro que desea modificar:");
+    System.out.println("Digite el id del registro que desea modificar:");
     incomeDto.setId(in.nextInt());
     in.nextLine();
-    System.out.println("Ingrese la información solicitada:");
-    System.out.println("Ingrese el nuevo nombre:");
+    System.out.println("Digite la información solicitada:");
+    System.out.println("Digite el nuevo nombre:");
     incomeDto.setName(in.nextLine());
-    System.out.println("Ingreses el nuevo día:");
+    System.out.println("Digite el nuevo día:");
     incomeDto.setDay(in.nextInt());
     in.nextLine();
-    System.out.println("Ingrese el nuevo mes:");
+    System.out.println("Digite el nuevo mes:");
     incomeDto.setMonth(in.nextLine());
-    System.out.println("Ingrese el nuevo año:");
+    System.out.println("Digite el nuevo año:");
     incomeDto.setYear(in.nextInt());
     System.out.println(
           "Seleccione la nueva categoría:\n" +
@@ -40,7 +40,7 @@ public class IncomeUpdateController {
             System.out.println("No se encontró la opción seleccionada. Intente de nuevo:");
             updateIncome();
         }
-    System.out.println("Ingrese la nueva cantidad:");
+    System.out.println("Digite la nueva cantidad:");
     incomeDto.setAmount(in.nextInt());
 
     incomeDao.update(incomeDto);

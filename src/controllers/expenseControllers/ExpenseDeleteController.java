@@ -12,7 +12,7 @@ public class ExpenseDeleteController {
     System.out.println(
             "NOTA: Una vez eliminado el registro, no se puede recuperar\n" +
                     "Verifique bien el id del registro antes de borrar\n" +
-                    "Indique el id del registro que desea eliminar:"
+                    "Digite el id del registro que desea eliminar:"
     );
     expenseDao.delete(in.nextInt());
   }

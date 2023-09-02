@@ -11,17 +11,17 @@ public class IncomeCreateController {
   private static final Scanner in = new Scanner(System.in);
   public static void incomeRegister() {
     IncomeDao incomeDao = new IncomeDaoImpl();
-    System.out.println("Ingrese la información solicitada para registrar el ingreso.");
+    System.out.println("Digite la información solicitada para registrar el ingreso.");
 
     IncomeDto incomeDto= new IncomeDto();
-    System.out.println("Ingrese el nombre del ingreso:");
+    System.out.println("Digite el nombre del ingreso:");
     incomeDto.setName(in.nextLine().toUpperCase());
-    System.out.println("Ingrese el número de día del mes en que se recibió:");
+    System.out.println("Digite el número de día del mes en que se recibió:");
     incomeDto.setDay(in.nextInt());
     in.nextLine();
-    System.out.println("Ingrese el nombre del mes en que se recibió:");
+    System.out.println("Digite el nombre del mes en que se recibió:");
     incomeDto.setMonth(in.nextLine().toLowerCase());
-    System.out.println("Ingrese el año en que se recibió, a cuatro dígitos:");
+    System.out.println("Digite el año en que se recibió, a cuatro dígitos:");
     incomeDto.setYear(in.nextInt());
     System.out.println("Elija el tipo de ingreso, de la siguiente lista:");
     System.out.println("1. Sueldo\n" + "2. Extra");
@@ -34,7 +34,7 @@ public class IncomeCreateController {
       default:
         System.out.println("No se encontró la opción seleccionada.");
     }
-    System.out.println("Ingrese la cantidad:");
+    System.out.println("Digite la cantidad:");
     incomeDto.setAmount(in.nextDouble());
 
     incomeDao.create(incomeDto);

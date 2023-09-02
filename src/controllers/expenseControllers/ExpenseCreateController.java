@@ -12,17 +12,17 @@ public class ExpenseCreateController {
 
   public static void expenseRegister() {
     ExpenseDao expenseDao = new ExpenseDaoImpl();
-    System.out.println("Ingrese la información solicitada para registrar el ingreso.");
+    System.out.println("Digite la información solicitada para registrar el gasto.");
 
     ExpenseDto expenseDto = new ExpenseDto();
-    System.out.println("Ingrese el nombre del gasto:");
+    System.out.println("Digite el nombre del gasto:");
     expenseDto.setName(in.nextLine().toUpperCase());
-    System.out.println("Ingrese el número de día del mes que se gastó:");
+    System.out.println("Digite el número de día del mes que se gastó:");
     expenseDto.setDay(in.nextInt());
     in.nextLine();
-    System.out.println("Ingrese el nombre del mes que se gastó:");
+    System.out.println("Digite el nombre del mes que se gastó:");
     expenseDto.setMonth(in.nextLine().toLowerCase());
-    System.out.println("Ingrese el año en que se gastó, a cuatro dígitos:");
+    System.out.println("Digite el año en que se gastó, a cuatro dígitos:");
     expenseDto.setYear(in.nextInt());
     System.out.println("Elija el tipo de gasto, de la siguiente lista:");
     System.out.println("1. Alimentos\n"
@@ -64,7 +64,7 @@ public class ExpenseCreateController {
         System.out.println("No se encontró la opción digitada. Comience de nuevo.");
         expenseRegister();
     }
-    System.out.println("Ingrese la cantidad:");
+    System.out.println("Digite la cantidad:");
     expenseDto.setAmount(in.nextDouble());
 
     expenseDao.create(expenseDto);
