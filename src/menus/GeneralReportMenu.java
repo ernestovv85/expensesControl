@@ -2,6 +2,8 @@ package menus;
 
 import java.util.Scanner;
 
+import static controllers.generalReportControllers.RemainingPerMonth.remainingPerMonth;
+import static controllers.generalReportControllers.RemainingPerYear.remainingPerYear;
 import static menus.AlternativeMenu.alternativeMenuGeneralReport;
 import static menus.GeneralMenu.generalMenu;
 
@@ -15,11 +17,13 @@ public class GeneralReportMenu {
     switch(options) {
       case 1:
         System.out.println("Restante por mes");
+        remainingPerMonth();
         System.out.println("Operación realizada con éxito");
         alternativeMenuGeneralReport();
         break;
       case 2:
         System.out.println("Restante por año");
+        remainingPerYear();
         System.out.println("Operación realizada con éxito");
         alternativeMenuGeneralReport();
         break;
