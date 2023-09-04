@@ -18,12 +18,12 @@ public class ExpenseUpdateController {
     in.nextLine();
     System.out.println("Digite la información solicitada:");
     System.out.println("Digite el nuevo nombre:");
-    expenseDto.setName(in.nextLine());
+    expenseDto.setName(in.nextLine().toUpperCase());
     System.out.println("Digite el nuevo día:");
     expenseDto.setDay(in.nextInt());
     in.nextLine();
     System.out.println("Digite el nuevo mes:");
-    expenseDto.setMonth(in.nextLine());
+    expenseDto.setMonth(in.nextLine().toLowerCase());
     System.out.println("Digite el nuevo año:");
     expenseDto.setYear(in.nextInt());
     System.out.println("Elija el tipo de gasto, de la siguiente lista:");

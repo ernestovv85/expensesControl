@@ -18,12 +18,12 @@ public class IncomeUpdateController {
     in.nextLine();
     System.out.println("Digite la información solicitada:");
     System.out.println("Digite el nuevo nombre:");
-    incomeDto.setName(in.nextLine());
+    incomeDto.setName(in.nextLine().toUpperCase());
     System.out.println("Digite el nuevo día:");
     incomeDto.setDay(in.nextInt());
     in.nextLine();
     System.out.println("Digite el nuevo mes:");
-    incomeDto.setMonth(in.nextLine());
+    incomeDto.setMonth(in.nextLine().toLowerCase());
     System.out.println("Digite el nuevo año:");
     incomeDto.setYear(in.nextInt());
     System.out.println(
