@@ -14,7 +14,7 @@ class IncomeCreateControllerTest {
   void testIncomeRegister() {
     IncomeDao incomeDao = new IncomeDaoImpl();
     IncomeDto incomeDto = new IncomeDto();
-    incomeDto.setName("Quincena");
+    incomeDto.setName("Prueba");
     incomeDto.setDay(15);
     incomeDto.setMonth("octubre");
     incomeDto.setYear(2023);
